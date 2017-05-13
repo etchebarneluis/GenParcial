@@ -1,6 +1,7 @@
 #ifndef ALQUILER_H
 #define ALQUILER_H
 
+#include "Aviso.h"
 #include <string>
 #include <iostream>
 using namespace std;

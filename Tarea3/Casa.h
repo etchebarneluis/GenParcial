@@ -1,6 +1,7 @@
 #ifndef CASA_H
 #define CASA_H
 
+#include"Propiedad.h"
 #include <string>
 #include <iostream>
 using namespace std;

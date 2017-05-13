@@ -2,6 +2,7 @@
 #define INMOBILIARIA_H
 
 #include "Inmobiliaria-Propiedad.h"
+#include "Usuario.h"
 #include <string>
 #include <iostream>
 using namespace std;

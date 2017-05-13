@@ -2,6 +2,7 @@
 #define APARTAMENTO_H
 
 #include"Edificio.h"
+#include "Propiedad.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -11,6 +12,7 @@ class Apartamento: public Propiedad {
 private:
     int num;
     Edificio* edificio;
+
 public:
     
     Apartamento();
