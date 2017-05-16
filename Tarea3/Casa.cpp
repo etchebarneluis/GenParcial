@@ -1,7 +1,7 @@
 #include "Casa.h"
 
-Casa::Casa() {
-    this->m2EspVerde = "0";
+Casa::Casa() : Propiedad() {
+    this->m2EspVerde = 0;
 }
 
 float Casa::getm2EspVerde(){

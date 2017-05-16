@@ -2,8 +2,8 @@
 
 Edificio::Edificio() {
     this->nomEdificio = "";
-    this->gastosComunes = "0";
-    this->cantPisos = "0";
+    this->gastosComunes = 0;
+    this->cantPisos = 0;
 }
 
 string Edificio::getNomEdificio(){

@@ -2,14 +2,14 @@
 
 Usuario::Usuario() {
     this->correo = "";
-    this->contraseña = "";
+    this->contrasenia = "";
 }
 
 string Usuario::getCorreo(){
     return "";   
 }
 
-string Usuario::getContraseña(){
+string Usuario::getContrasenia(){
     return "";   
 }
 
@@ -17,8 +17,8 @@ void Usuario::setCorreo(string c) {
     this->correo = c;
 }
 
-void Usuario::setContraseña(string p) {
-    this->contraseña = p;
+void Usuario::setContrasenia(string p) {
+    this->contrasenia = p;
 } 
 
 Usuario::~Usuario() {

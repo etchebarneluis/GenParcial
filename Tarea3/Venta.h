@@ -1,11 +1,12 @@
 #ifndef VENTA_H
 #define VENTA_H
 
+#include "Aviso.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
-class Venta: public Aviso {
+class Venta: public Aviso{
 
 private:
     float precioV;

@@ -1,6 +1,6 @@
 #include "Inmobiliaria.h"
 
-Inmobiliaria::Inmobiliaria() {
+Inmobiliaria::Inmobiliaria()  : Usuario() {
     this->nombre = "";
     this->ubicacion = "";
     this->inmo_prop = NULL;

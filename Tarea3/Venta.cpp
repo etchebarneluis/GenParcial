@@ -1,7 +1,7 @@
 #include "Venta.h"
 
-Venta::Venta() {
-    this->precioV = "0";
+Venta::Venta() : Aviso() {
+    this->precioV = 0;
 }
 
 float Venta::getPrecioV(){

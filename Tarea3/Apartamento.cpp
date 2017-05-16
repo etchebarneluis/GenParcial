@@ -1,7 +1,7 @@
 #include "Apartamento.h"
 
-Apartamento::Apartamento() {
-    this->num = "0";
+Apartamento::Apartamento() : Propiedad() {
+    this->num = 0;
     this->edificio = NULL;
 }
 

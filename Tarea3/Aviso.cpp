@@ -1,9 +1,9 @@
 #include "Aviso.h"
 
-Casa::Casa() {
+Aviso::Aviso() {
   
 }
 
-Casa::~Casa() {
+Aviso::~Aviso() {
  
 }

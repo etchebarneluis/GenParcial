@@ -1,7 +1,7 @@
 #include "Zona.h"
 
 Zona::Zona() {
-    this->codigo = "0";
+    this->codigo = 0;
     this->nombre = "";
     this->departamento = NULL;
 }

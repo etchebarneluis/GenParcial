@@ -1,14 +1,14 @@
 #include "Propiedad.h"
 
 Propiedad::Propiedad() {
-    this->codigo = "0";
-    this->cantAmb = "0";
-    this->cantDorm = "0";
-    this->cantBanios = "0";
-    this->garage = "false";
+    this->codigo = 0;
+    this->cantAmb = 0;
+    this->cantDorm = 0;
+    this->cantBanios = 0;
+    this->garage = false;
     this->direccion = NULL;
-    this->m2Edificados = "0";
-    this->m2Tot = "0";
+    this->m2Edificados = 0;
+    this->m2Tot = 0;
     this->zona = NULL;
 }
 
@@ -28,11 +28,11 @@ int Propiedad::getCantBanios(){
     return cantBanios;   
 }
 
-bool Propiedad::getCantAmb(){
+bool Propiedad::getGarage(){
     return garage;   
 }
 
-Direccion Propiedad::getDireccion(){
+Direccion* Propiedad::getDireccion(){
     return direccion;   
 }
 
@@ -64,7 +64,7 @@ void Propiedad::setGarage(bool g) {
     this->garage = g;
 } 
 
-void Propiedad::setDireccion(Direccion dir) {
+void Propiedad::setDireccion(Direccion* dir) {
     this->direccion = dir;
 } 
 

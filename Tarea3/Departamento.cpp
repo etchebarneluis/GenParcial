@@ -1,8 +1,8 @@
 #include "Departamento.h"
 
 Departamento::Departamento() {
-    this->letra = "";
-    this->matricula = "0";
+    this->letra = 'a';
+    this->matricula = "";
     this->nombre = "";
 }
 

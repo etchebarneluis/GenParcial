@@ -1,8 +1,8 @@
 #include "Aviso.h"
 #include "Alquiler.h"
 
-Alquiler::Alquiler() {
-    this->precioA = "0";
+Alquiler::Alquiler() : Aviso() {
+    this->precioA = 0;
 }
 
 float Alquiler::getPrecioA(){
