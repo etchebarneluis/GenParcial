@@ -4,19 +4,19 @@ Sistema::Sistema() {
 
 }
 
-void Sistema::ingresarInmobiliaria(string a, Direccion b, string c) {
+void Sistema::ingresarInmobiliaria(string a, DtDireccion b, string c) {
     cout<<"La inmobiliaria se dio de alta exitosamente..."<<endl;
     return;
 }
 
-Departamento** Sistema::listarDepartamentos() {
-    Departamento** dep = NULL;
+DtDepartamento** Sistema::listarDepartamentos() {
+    DtDepartamento** dep = NULL;
 
     return dep;
 }
 
-Zona** Sistema::listarZonas(string d) {
-    Zona** zona = NULL;
+DtZona** Sistema::listarZonas(string d) {
+    DtZona** zona = NULL;
 
     return zona;
 }
@@ -25,8 +25,8 @@ void Sistema::selectZona(int z) {
     
 }
 
-Edificio** Sistema::listarEdificios() {
-    Edificio** edificio = NULL;
+DtEdificio** Sistema::listarEdificios() {
+    DtEdificio** edificio = NULL;
 
     return edificio;
 }
@@ -40,21 +40,21 @@ void Sistema::selectEdificio(string n) {
     
 }
 
-void Sistema::fijarAlquiler(float a) {
-    cout<<"Aqui se fija el precio de alquiler(setter)..."<<endl;
-    return;
+bool Sistema::fijarAlquiler(float a) {
+    cout<<"Aqui se fija el precio de alquiler..."<<endl;
+    return true;
 }
 
 void Sistema::fijarVenta(float a) {
-    cout<<"Aqui se fija el precio de venta(setter)..."<<endl;
+    cout<<"Aqui se fija el precio de venta..."<<endl;
     return;
 }
 
-int Sistema::altaApto(int a, int b, int c, int d, bool e, Direccion f, float g) {
+int Sistema::altaApto(int a, int b, int c, int d, bool e, DtDireccion f, float g) {
     return 1;
 }
 
-int Sistema::altaCasa(int a, int b, int c, bool e, Direccion f, float g, float h) {
+int Sistema::altaCasa(int a, int b, int c, bool e, DtDireccion f, float g, float h) {
     return 0;
 }
 

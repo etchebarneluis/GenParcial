@@ -1,10 +1,10 @@
 #ifndef SISTEMA_H
 #define SISTEMA_H
 
-#include "Direccion.h"
-#include "Zona.h"
-#include "Edificio.h"
-#include "Departamento.h"
+#include "DtDireccion.h"
+#include "DtZona.h"
+#include "DtEdificio.h"
+#include "DtDepartamento.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -15,18 +15,18 @@ public:
     
     Sistema();
     
-    void ingresarInmobiliaria(string,Direccion,string); //ALTA INMOBILIARIA
+    void ingresarInmobiliaria(string,DtDireccion,string); //ALTA INMOBILIARIA
     
-    Departamento** listarDepartamentos();
-    Zona** listarZonas(string);
+    DtDepartamento** listarDepartamentos();
+    DtZona** listarZonas(string);
     void selectZona(int);
-    Edificio** listarEdificios();
+    DtEdificio** listarEdificios();
     void ingresarEdificio(string,int,float);
     void selectEdificio(string);
-    void fijarAlquiler(float);
+    bool fijarAlquiler(float);
     void fijarVenta(float);
-    int altaApto(int,int,int,int,bool,Direccion,float);
-    int altaCasa(int,int,int,bool,Direccion,float,float);
+    int altaApto(int,int,int,int,bool,DtDireccion,float);
+    int altaCasa(int,int,int,bool,DtDireccion,float,float);
     
     ~Sistema();
 };

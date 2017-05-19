@@ -2,16 +2,16 @@
 #include "Apartamento.h"
 #include "Aviso.h"
 #include "Casa.h"
-#include "Departamento.h"
-#include "Direccion.h"
-#include "Edificio.h"
+#include "DtDepartamento.h"
+#include "DtDireccion.h"
+#include "DtEdificio.h"
 #include "Inmobiliaria-Propiedad.h"
 #include "Inmobiliaria.h"
 #include "Propiedad.h"
 #include "Sistema.h"
 #include "Usuario.h"
 #include "Venta.h"
-#include "Zona.h"
+#include "DtZona.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -20,7 +20,7 @@
 using namespace std;
 
 /*ENCABEZADOS EXTRAS*/
-Direccion* generarDireccion();
+DtDireccion* generarDireccion();
 
 void altaInmobiliaria();
 void altaPropiedad();
@@ -31,17 +31,17 @@ Sistema* s;
 int main() {
     s = NULL;
 
-    Departamento** departamentos;
+    DtDepartamento** departamentos;
 
-    Zona** zona;
+    DtZona** zona;
 
-    Edificio** edificio;
+    DtEdificio** edificio;
 
     int opcion = 0;
 
     do {
         cout << "===== Menu ===========================" << endl;
-        cout << "   1) Alta Inbomiliaria" << endl;
+        cout << "   1) Alta Inmobiliaria" << endl;
         cout << "   2) Alta Propiedad" << endl;
         cout << "   0) Salir" << endl;
 
@@ -84,7 +84,7 @@ void altaPropiedad() {
 
     int z;
 
-    Departamento** departamentos = s->listarDepartamentos();
+    DtDepartamento** departamentos = s->listarDepartamentos();
 
     cout << "*Lista de departamentos*" << endl;
     /*for (int i = 0; i < 5; i++) {
@@ -97,7 +97,7 @@ void altaPropiedad() {
     cout << "Ingrese el nombre del departamento a seleccionar: ";
     getline(cin, dpto);
 
-    Zona** zona = s->listarZonas(dpto);
+    DtZona** zona = s->listarZonas(dpto);
 
     cout << "*Lista de zonas de " << dpto << "*" << endl;
     /*for (int i = 0; i < 5; i++) {
@@ -127,7 +127,7 @@ void altaPropiedad() {
     fflush(stdin);
 
     if (tipoprop == 1) {
-        Edificio** edificios = s->listarEdificios();
+        DtEdificio** edificios = s->listarEdificios();
 
 
         cout << "*Lista de edificios*" << endl;
@@ -151,7 +151,7 @@ void altaPropiedad() {
 
         s->selectEdificio(nombreEd);
 
-        cout << "Ingrese 1 si el edificio esta en alquiler" << endl;
+        cout << "Ingrese 1 si el Apartamento esta en alquiler" << endl;
         cin >> opc;
         if (opc == 1) {
             float precioAlquiler;
@@ -160,7 +160,7 @@ void altaPropiedad() {
             s->fijarAlquiler(precioAlquiler);
         }
 
-        cout << "Ingrese 1 si el edificio esta en venta" << endl;
+        cout << "Ingrese 1 si el Apartamento esta en venta" << endl;
         cin >> opc;
         if (opc == 1) {
             float precioVenta;
@@ -180,7 +180,7 @@ void altaPropiedad() {
         cin>>cantAmb;
         cout << "Cantidad de Dormitorios: ";
         cin>>cantDorm;
-        cout << "Cantidad de Baños: ";
+        cout << "Cantidad de BaÃƒÂ±os: ";
         cin>>cantBanios;
         cout << "Metros Cuadrados: ";
         cin>>m2;
@@ -198,27 +198,29 @@ void altaPropiedad() {
         }
 
         codigo = s->altaApto(nro, cantAmb, cantDorm, cantBanios, garage, *generarDireccion(), m2);
+        cout<<"Alta Apartamento Exitosa..."<<endl;
     } else {
         int opc;
 
-        cout << "Ingrese 1 si el edificio esta en alquiler" << endl;
+        cout << "Ingrese 1 si la casa esta en alquiler" << endl;
         cin >> opc;
+        bool enAlquiler=true;
         if (opc == 1) {
             float precioAlquiler;
             cout << "Ingrese precio: ";
             cin >> precioAlquiler;
-            s->fijarAlquiler(precioAlquiler);
+            enAlquiler = s->fijarAlquiler(precioAlquiler);
         }
 
-        cout << "Ingrese 1 si el edificio esta en venta" << endl;
+        cout << "Ingrese 1 si la casa esta en venta" << endl;
         cin >> opc;
-        if (opc == 1) {
+        if (opc == 1 || !enAlquiler) {
             float precioVenta;
             cout << "Ingrese precio: ";
             cin >> precioVenta;
             s->fijarVenta(precioVenta);
         }
-
+         
         int codigo, cantAmb, cantDorm, cantBanios;
         float m2edificados, m2verdes;
         bool garage;
@@ -228,7 +230,7 @@ void altaPropiedad() {
         cin>>cantAmb;
         cout << "Cantidad de Dormitorios: ";
         cin>>cantDorm;
-        cout << "Cantidad de Baños: ";
+        cout << "Cantidad de BaÃƒÂ±os: ";
         cin>>cantBanios;
         cout << "Metros Cuadrados Edificados: ";
         cin>>m2edificados;
@@ -248,6 +250,7 @@ void altaPropiedad() {
         }
 
         codigo = s->altaCasa(cantAmb, cantDorm, cantBanios, garage, *generarDireccion(), m2edificados, m2verdes);
+        cout<<"Alta Casa Exitosa..."<<endl;
     }
 }
 
@@ -271,7 +274,7 @@ void altaEdificio() {
     s->ingresarEdificio(nombre, piso, gastos);
 }
 
-Direccion * generarDireccion() {
+DtDireccion * generarDireccion() {
     string pais, ciudad, numero, calle;
     cin.clear();
     fflush(stdin);
@@ -285,5 +288,5 @@ Direccion * generarDireccion() {
     cout << "Numero: ";
     getline(cin, numero);
 
-    return new Direccion(pais, ciudad, numero, calle);
+    return new DtDireccion(pais, ciudad, numero, calle);
 }
